@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from PIL import Image
 import os
 import plotly.express as px
-from chatbot import chatbot_query
+# from chatbot import chatbot_query
 # Function to load the YouTube data from the provided file path
 def load_video_data_from_file(file_path):
     try:
