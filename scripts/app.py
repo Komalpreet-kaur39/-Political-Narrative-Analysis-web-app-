@@ -60,7 +60,7 @@ graph_names = [
 
 if not df.empty:
     # Define the tabs
-    tabs = st.tabs(["Data Overview", "Visualizations", "Interactive Features","caption summary","Ask & Analyze"])
+    tabs = st.tabs(["Data Overview", "Visualizations", "Interactive Features","caption summary"])
 
     with tabs[0]:
         # Data Overview Tab
@@ -257,31 +257,31 @@ if not df.empty:
                 st.warning("No matching titles found. Try refining your search.")
         else:
             st.info("Type a title to start searching.")
-    with tabs[4]:
-        # Chatbot Tab
-        st.subheader(f"Chatbot for {selected_channel}")
+    # with tabs[4]:
+    #     # Chatbot Tab
+    #     st.subheader(f"Chatbot for {selected_channel}")
         
-        st.write("Ask any question related to the data, and the chatbot will analyze and respond.")
+    #     st.write("Ask any question related to the data, and the chatbot will analyze and respond.")
 
-        # User Input for Chatbot Query
-        user_query = st.text_input("Enter your question:", placeholder="e.g., What are the top 5 videos with the most views?")
+    #     # User Input for Chatbot Query
+    #     user_query = st.text_input("Enter your question:", placeholder="e.g., What are the top 5 videos with the most views?")
         
-        if user_query:
-            st.write(f"**You:** {user_query}")
-            with st.spinner("The bot is thinking... please wait!"):
-             # response = chatbot_query(user_query, df)
-                try:
-                # Fetch the response from the chatbot
-                    response = chatbot_query(user_query, df)
-                    # Display the chatbot's response
-                    st.write("### Chatbot Response:")
-                    st.write(response)
-                except Exception as e:
-            # In case of any unexpected errors in the chatbot processing
-                    st.error(f"An unexpected error occurred: {str(e)}")
+    #     if user_query:
+    #         st.write(f"**You:** {user_query}")
+    #         with st.spinner("The bot is thinking... please wait!"):
+    #          # response = chatbot_query(user_query, df)
+    #             try:
+    #             # Fetch the response from the chatbot
+    #                 response = chatbot_query(user_query, df)
+    #                 # Display the chatbot's response
+    #                 st.write("### Chatbot Response:")
+    #                 st.write(response)
+    #             except Exception as e:
+    #         # In case of any unexpected errors in the chatbot processing
+    #                 st.error(f"An unexpected error occurred: {str(e)}")
         
-        #  add a button for clearing the input field
-        # if st.button("Clear Input"):
-        #     user_query = ""
+    #     #  add a button for clearing the input field
+    #     # if st.button("Clear Input"):
+    #     #     user_query = ""
 else:
     st.write("Please upload a valid CSV file.")
